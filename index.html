@@ -26,22 +26,24 @@ h1{
   opacity:0.85;
 }
 
-.grid-container{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap:20px;
+.story-container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.card{
+.card {
   background:#0d0d0d;
-  padding:20px;
+  padding:25px;
   border-radius:25px;
   box-shadow:0 12px 30px rgba(255,26,26,0.25);
   transition: transform 0.2s;
 }
 
 .card:hover{
-  transform:scale(1.03);
+  transform:scale(1.02);
 }
 
 button{
@@ -73,12 +75,6 @@ button:hover{
   color:#ffcccc;
 }
 
-a{
-  color:#ff4d4d;
-  text-decoration:none;
-  font-weight:bold;
-}
-
 footer{
   text-align:center;
   margin-top:40px;
@@ -86,13 +82,12 @@ footer{
   font-size:14px;
 }
 
-/* Mobile tweaks */
-@media(max-width:400px){
+@media(max-width:600px){
   .card{
     padding:15px;
   }
   button{
-    padding:16px 24px;
+    padding:12px 20px;
     font-size:16px;
   }
   h1{font-size:24px;}
@@ -106,159 +101,169 @@ footer{
 <h1>For Aaron 🖤</h1>
 <div class="subtitle">from Sera ❤️</div>
 
-<div class="grid-container">
+<div class="story-container">
 
-  <div class="card">
-    <h2>About You</h2>
-    <p>My amazing, funny, cute, talented, kind, smart boyfriend.</p>
-  </div>
+<div class="card">
+<h2>About You</h2>
+<p>My amazing, funny, cute, talented, kind, smart boyfriend.</p>
+</div>
 
-  <div class="card">
-    <h2>A–Z Aaron ❤️</h2>
-    <button onclick="toggle('love')">Read</button>
-    <div id="love" class="hidden">
-      <ul style="text-align:left">
-        <li>Amazing</li><li>Beautiful</li><li>Caring</li><li>Dependable</li>
-        <li>Enchanting</li><li>Funny</li><li>Generous</li><li>Honest</li>
-        <li>Intelligent</li><li>Joyful</li><li>Kind</li><li>Loving</li>
-        <li>Motivated</li><li>Nice</li><li>Optimistic</li><li>Passionate</li>
-        <li>Quixotic</li><li>Reliable</li><li>Sweet</li><li>Talented</li>
-        <li>Understanding</li><li>Vibrant</li><li>Wise</li><li>X-traordinary</li>
-        <li>Yearning</li><li>Zany</li>
-      </ul>
-    </div>
-  </div>
+<div class="card">
+<h2>A–Z Aaron ❤️</h2>
+<button onclick="toggle('love')">Read</button>
+<div id="love" class="hidden">
+<ul style="text-align:left">
+<li>Amazing</li><li>Beautiful</li><li>Caring</li><li>Dependable</li>
+<li>Enchanting</li><li>Funny</li><li>Generous</li><li>Honest</li>
+<li>Intelligent</li><li>Joyful</li><li>Kind</li><li>Loving</li>
+<li>Motivated</li><li>Nice</li><li>Optimistic</li><li>Passionate</li>
+<li>Quixotic</li><li>Reliable</li><li>Sweet</li><li>Talented</li>
+<li>Understanding</li><li>Vibrant</li><li>Wise</li><li>X-traordinary</li>
+<li>Yearning</li><li>Zany</li>
+</ul>
+</div>
+</div>
 
-  <div class="card">
-    <h2>Our Story</h2>
-    <h3>Aaron’s POV</h3>
-    <p>
-      11th annual, some day after the exam, in that canteen area I was with my friend,
-      and I saw you. We looked at each other for like 5 seconds, and you smiled.
-      Since then I’ve had you in my mind. I didn’t forget that.
-      I never looked at anyone like that.
-      You looked at me and I was stunned.
-    </p>
-    <h3>Sera’s POV</h3>
-    <p>
-      2023 some random day I get a notification from a Birla confession page.
-      It was basically us shipped but the person said they didn’t know which Sera.
-      I checked your profile and life went on.
-      Later I kept seeing you around school and thought you were really attractive.
-      Eventually things lined up and here we are.
-    </p>
-    <button onclick="toggle('nov3'); confetti()">Nov 3</button>
-    <div id="nov3" class="hidden"><p>yes dean blunt lover 🙏🙏</p></div>
-  </div>
+<div class="card">
+<h2>Our Story</h2>
 
-  <div class="card">
-    <h2>Our Time Together ⏳</h2>
-    <p>We've been together for</p>
-    <div id="loveTimer" class="counter"></div>
-  </div>
+<h3>Aaron’s POV</h3>
+<p>
+"11th annuals some day after exam in that canteen area i was w my friend<br><br>
+nd i saw u nd we looked at each other for like 5 secs nd u smiled bro since then ive had in u in my mind like i didnt forget that<br><br>
+bro i never looked at anyone like that<br><br>
+u looked at me nd i was like stunned<br><br>
+u held eye contact so well i was like shi"
+</p>
 
-  <div class="card">
-    <h2>Open When…</h2>
-    <button onclick="openWhen('miss')">You Miss Me</button>
-    <button onclick="openWhen('stress')">You're Stressed</button>
-    <button onclick="openWhen('sad')">You're Low</button>
-    <button onclick="openWhen('sleep')">You Can't Sleep</button>
-    <div id="openBox" class="hidden"></div>
-  </div>
+<h3>Sera’s POV</h3>
+<p>
+"ok so 2023 some random day i get a notif from some birla confession page<br><br>
+it was basically us shipped but the person was like idk which sera n i chk ur profile life goes on<br><br>
+a week later i bump into u at school ive seen u w shivani so ik who u r n then life goes on<br><br>
+but ever since that my whole feed was filled w ur likes n shit n i was like wow ok cool guy ig<br><br>
+life goes on i dont see ur likes for a while then 24 ending time im w this guy n i barely like him<br><br>
+like all he did was fish for compliments drained me sm nothing in common cldnt even hold proper convos<br><br>
+i was w him out of guilt lowk n i was js thinking to myself what do i do how do i end things what do i really want<br><br>
+n the day after my feed was filled w ur likes again divine timing<br><br>
+n i was like yeah exactly i want my bf to atleast have good humor<br><br>
+n then after a while shit hapns n we end things<br><br>
+n then i kept seeing u at school n i found u really attractive<br><br>
+n i told my frnd i wldnt mind getting w u but thats lowk impossible so its wtv"
+</p>
 
-  <div class="card">
-    <h2>Playlist for My Beautiful Boy 🎶</h2>
-    <iframe 
-      src="https://open.spotify.com/embed/playlist/3bYv6pXQRv5oJobMnoOWXa" 
-      width="100%" 
-      height="80" 
-      frameborder="0" 
-      allowtransparency="true" 
-      allow="encrypted-media">
-    </iframe>
-  </div>
+<button onclick="toggle('nov3'); confetti()">Nov 3</button>
+<div id="nov3" class="hidden"><p>yes dean blunt lover 🙏🙏</p></div>
+</div>
 
-  <div class="card">
-    <h2>Umma Counter 💋</h2>
-    <p>Every click = a kiss & hug from me</p>
-    <button onclick="giveKiss()">Kiss Me</button>
-    <div id="kissCount" class="counter"></div>
-    <div id="kissMessage" class="hidden"></div>
-  </div>
+<div class="card">
+<h2>Our Time Together ⏳</h2>
+<p>We've been together for</p>
+<div id="loveTimer" class="counter"></div>
+</div>
 
-  <div class="card">
-    <h2>Coming Soon…</h2>
-    <button onclick="toggle('m2')">Mystery Surprise 1</button>
-    <div id="m2" class="hidden"></div>
+<div class="card">
+<h2>Open When…</h2>
+<button onclick="openWhen('miss')">You Miss Me</button>
+<button onclick="openWhen('stress')">You're Stressed</button>
+<button onclick="openWhen('sad')">You're Low</button>
+<button onclick="openWhen('sleep')">You Can't Sleep</button>
+<div id="openBox" class="hidden"></div>
+</div>
 
-    <button onclick="toggle('m3')">Mystery Surprise 2</button>
-    <div id="m3" class="hidden"></div>
+<div class="card">
+<h2>Playlist for My Beautiful Boy 🎶</h2>
+<iframe 
+src="https://open.spotify.com/embed/playlist/3bYv6pXQRv5oJobMnoOWXa"
+width="100%"
+height="80"
+frameborder="0"
+allowtransparency="true"
+allow="encrypted-media">
+</iframe>
+</div>
 
-    <button onclick="toggle('m4')">Mystery Surprise 3</button>
-    <div id="m4" class="hidden"></div>
-  </div>
+<div class="card">
+<h2>Umma Counter 💋</h2>
+<p>Every click = a kiss & hug from me</p>
+<button onclick="giveKiss()">Kiss Me</button>
+<div id="kissCount" class="counter"></div>
+</div>
+
+<div class="card">
+<h2>Coming Soon…</h2>
+<button onclick="toggle('m2')">Mystery Surprise 1</button>
+<div id="m2" class="hidden"></div>
+
+<button onclick="toggle('m3')">Mystery Surprise 2</button>
+<div id="m3" class="hidden"></div>
+
+<button onclick="toggle('m4')">Mystery Surprise 3</button>
+<div id="m4" class="hidden"></div>
+</div>
 
 </div>
 
 <footer>Made with love</footer>
 
 <script>
+// Toggle sections
 function toggle(id){
-  const el=document.getElementById(id)
-  el.style.display=el.style.display==="block"?"none":"block"
+const el=document.getElementById(id)
+el.style.display=el.style.display==="block"?"none":"block"
 }
 
+// Open When messages
 function openWhen(type){
-  const messages={
-    miss:"I miss you too dear. Umma ❤️",
-    stress:"Breathe. One thing at a time. You got this.",
-    sad:"Do something small that makes you happy.",
-    sleep:"Put your phone down and relax."
-  }
-  const box=document.getElementById("openBox")
-  box.innerText=messages[type]
-  box.style.display="block"
+const messages={
+miss:"I miss you too dear. Umma ❤️",
+stress:"Breathe. One thing at a time. You got this.",
+sad:"Do something small that makes you happy.",
+sleep:"Put your phone down and relax."
+}
+const box=document.getElementById("openBox")
+box.innerText=messages[type]
+box.style.display="block"
 }
 
-let kisses=localStorage.getItem("kisses")?parseInt(localStorage.getItem("kisses")):0
-const kissTexts=["Soft kiss","Tight hug","Forehead kiss","Holding you","Another kiss"]
+// Kiss counter (no messages)
+let kisses = localStorage.getItem("kisses") ? parseInt(localStorage.getItem("kisses")) : 0;
+document.getElementById("kissCount").innerText = `💋 ${kisses} kisses • 🫂 ${kisses} hugs`;
 
-function giveKiss(){
-  kisses++
-  localStorage.setItem("kisses",kisses)
-  document.getElementById("kissCount").innerText=`💋 ${kisses} kisses • 🫂 ${kisses} hugs`
-  let text=kissTexts[kisses%kissTexts.length]
-  if(kisses===50) alert("50 kisses already?? I love you so much ❤️")
-  if(kisses===100) text="I'd choose you in every lifetime"
-  const msg=document.getElementById("kissMessage")
-  msg.innerText=text
-  msg.style.display="block"
+function giveKiss() {
+  kisses++;
+  localStorage.setItem("kisses", kisses);
+  document.getElementById("kissCount").innerText = `💋 ${kisses} kisses • 🫂 ${kisses} hugs`;
 }
 
-document.getElementById("kissCount").innerText=`💋 ${kisses} kisses • 🫂 ${kisses} hugs`
+// Live relationship timer with seconds
+const startDate = new Date("2026-01-22T00:00:00");
+function updateLoveTimer() {
+  const now = new Date();
+  const diff = now - startDate;
 
-const startDate=new Date("2026-01-22")
-function updateLoveTimer(){
-  const now=new Date()
-  const diff=now-startDate
-  const days=Math.floor(diff/(1000*60*60*24))
-  const hours=Math.floor((diff/(1000*60*60))%24)
-  const minutes=Math.floor((diff/(1000*60))%60)
-  document.getElementById("loveTimer").innerText=`${days} days ${hours} hours ${minutes} minutes ❤️`
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("loveTimer").innerText =
+    days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ❤️";
 }
-updateLoveTimer()
-setInterval(updateLoveTimer,60000)
+updateLoveTimer();
+setInterval(updateLoveTimer, 1000);
 
+// Confetti for Nov 3
 function confetti(){
-  for(let i=0;i<30;i++){
-    const c=document.createElement("div");
-    c.innerText=Math.random() < 0.5 ? "❤️" : "🖤";
-    c.style.position="fixed";
-    c.style.left=Math.random()*100+"vw";
-    c.style.top=Math.random()*100+"vh";
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),1000);
-  }
+for(let i=0;i<30;i++){
+const c=document.createElement("div");
+c.innerText=Math.random() < 0.5 ? "❤️" : "🖤";
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top=Math.random()*100+"vh";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),1000);
+}
 }
 </script>
 
