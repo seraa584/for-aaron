@@ -49,17 +49,13 @@ h1{
   transform:scale(1.05);
 }
 
-.locked{
-  opacity:0.6;
-  cursor:not-allowed;
-}
-
 .message{
   margin-top:30px;
   font-size:18px;
   color:#ffcccc;
   min-height:80px;
-  line-height:1.4;
+  line-height:1.6;
+  white-space:pre-line;
 }
 </style>
 </head>
@@ -74,70 +70,97 @@ h1{
 <div class="message" id="messageBox"></div>
 
 <script>
+
 const messages = [
-  "Day 1: Hi my love, I'm so excited for ur bday! I love u so much. Hope u enjoy every day of this month. ❤️",
-  "Day 2: I still rmb the first time we talked during Founders Day and the way u smiled. U have such a beautiful smile. Always smile, Umma. ❤️",
-  "Day 3: Yk, sometimes I think ab how we both knew we wld have a lot to talk ab way b4 ever talking. I love love talking to you like u say exactly what I wanna hear, Umma. ❤️",
-  "Day 4: Rmb that one stayback day when we were tg? I enjoyed so much. I love love love spending time w u. I loved our first date; like, ur gen so fun to be around, Umma. ❤️",
-  "Day 5: Rmb when u first held my hand? I rmb the whole convo that led to that. I love holding ur hands; so warm and nice, Umma. ❤️",
-  "Day 6: Rmb our first indirect kiss? The juice day when I fell lol... From there to actual kisses, wow. I love kissing you. Ur cheek, ur lips, everything. I cld gen kiss you forever, Ummaaa. ❤️",
-  "Day 7: Rmb ur gifts, ur boats, juice, candies, brownies, and now rose and book asw. I lub all ur gifts so much. Thank you, dear Umma. ❤️",
-  "Day 8: Rmb farewell day hug? That was the best thing ever; the way you held me tight, I loved it so much. I wanna hug you forever, Ummaa. ❤️",
-  "Day 9: Rmb the days when we used to text til like 6 in the morning... I wanna spend the rest of my 6ams with you. ❤️",
-  "Day 10: I love how ur so gentle and sweet. I feel so safe with you; so cozy, my home ❤❤️",
-  "Day 11: 11 more days left!!!!!!!! So exciteds.... Rmb the graduation day where I was extremely happy 4u? I feel the same rn but 10x. Idk y, Ummaa. ❤️",
-  "Day 12: Everytime u say 'I love you', it feels like 22nd Jan all over again. I get butterflies everytime lol. Seriously, I love you so much lol. ❤️",
-  "Day 13: Can't stop thinking ab our first official date. I loved the way we were stargazing and listening to song w our hands intertwined. I felt so safe with u; like at that moment, I knew fs that I wanted to be with you always. ❤️",
-  "Day 14: I love the way you touch me. The way you touched my cheeks, my back, my face, my hands, my shoulders, everything. I love you, Ummaa. ❤️",
-  "Day 15: I love you so much for being understanding and patient w me. Ur gen my favorite person ever. ❤️",
-  "Day 16: I cant belieeve ur my boyfriend... emphasis on my. I still rmb the Birla confessions page; like, damn, who wldve thought? Thank u for treating me right. I love you so much. U deserve the world. ❤️",
-  "Day 17: I love our game dates. I love how I always win lol. I love you lol. Lets marry lol. Lets do this forever lol. ❤️",
-  "Day 18: I love how u alw mind read. Like, isnt it lowk so cool how we interlinks, made4eachother lol. ❤️",
-  "Day 19: I love how u dont have an ego. I love how genuine and pure u are. Never change, my love. ❤️",
-  "Day 20: I love staring at you. Ur the most beautiful man ever; my most beautiful man, Umma love. ❤️",
-  "Day 21: I love how u dont judge me and make me feel seen. Ur such an amazing person. Seriously, I hope u alw get the best. ❤️",
-  "Day 22: Happy birthday my love (happy 3 months asw, Umma)! May God bless you. I love you so much. Happy 18! I hope all ur wishes and prayers get granted. I love u so so so much, dear. Enjoy ur day, Ummaaaaaaaaaaaaaaaaaa. ❤️"
+"Day 1: Hi my love, I'm so excited for ur bday! I love u so much. Hope u enjoy every day of this month. ❤️",
+"Day 2: I still rmb the first time we talked during Founders Day and the way u smiled. U have such a beautiful smile. Always smile, Umma. ❤️",
+"Day 3: Yk, sometimes I think ab how we both knew we wld have a lot to talk ab way b4 ever talking. I love love talking to you like u say exactly what I wanna hear, Umma. ❤️",
+"Day 4: Rmb that one stayback day when we were tg? I enjoyed so much. I love love love spending time w u. I loved our first date; like, ur gen so fun to be around, Umma. ❤️",
+"Day 5: Rmb when u first held my hand? I rmb the whole convo that led to that. I love holding ur hands; so warm and nice, Umma. ❤️",
+"Day 6: Rmb our first indirect kiss? The juice day when I fell lol... From there to actual kisses, wow. I love kissing you. Ur cheek, ur lips, everything. I cld gen kiss you forever, Ummaaa. ❤️",
+"Day 7: Rmb ur gifts, ur boats, juice, candies, brownies, and now rose and book asw. I lub all ur gifts so much. Thank you, dear Umma. ❤️",
+"Day 8: Rmb farewell day hug? That was the best thing ever; the way you held me tight, I loved it so much. I wanna hug you forever, Ummaa. ❤️",
+"Day 9: Rmb the days when we used to text til like 6 in the morning... I wanna spend the rest of my 6ams with you. ❤️",
+"Day 10: I love how ur so gentle and sweet. I feel so safe with you; so cozy, my home ❤️",
+"Day 11: 11 more days left!!!!!!!! So exciteds.... Rmb the graduation day where I was extremely happy 4u? I feel the same rn but 10x. Idk y, Ummaa. ❤️",
+"Day 12: Everytime u say 'I love you', it feels like 22nd Jan all over again. I get butterflies everytime lol. Seriously, I love you so much lol. ❤️",
+"Day 13: Can't stop thinking ab our first official date. I loved the way we were stargazing and listening to song w our hands intertwined. I felt so safe with u; like at that moment, I knew fs that I wanted to be with you always. ❤️",
+"Day 14: I love the way you touch me. The way you touched my cheeks, my back, my face, my hands, my shoulders, everything. I love you, Ummaa. ❤️",
+"Day 15: I love you so much for being understanding and patient w me. Ur gen my favorite person ever. ❤️",
+"Day 16: I cant belieeve ur my boyfriend... emphasis on my. I still rmb the Birla confessions page; like, damn, who wldve thought? Thank u for treating me right. I love you so much. U deserve the world. ❤️",
+"Day 17: I love our game dates. I love how I always win lol. I love you lol. Lets marry lol. Lets do this forever lol. ❤️",
+"Day 18: I love how u alw mind read. Like, isnt it lowk so cool how we interlinks, made4eachother lol. ❤️",
+"Day 19: I love how u dont have an ego. I love how genuine and pure u are. Never change, my love. ❤️",
+"Day 20: I love staring at you. Ur the most beautiful man ever; my most beautiful man, Umma love. ❤️",
+"Day 21: I love how u dont judge me and make me feel seen. Ur such an amazing person. Seriously, I hope u alw get the best. ❤️",
+"Day 22: Happy birthday my love (happy 3 months asw, Umma)! May God bless you. I love you so much. Happy 18! I hope all ur wishes and prayers get granted. I love u so so so much, dear. Enjoy ur day, Ummaaaaaaaaaaaaaaaaaa. ❤️"
 ];
 
-// START DATE
-const startDate = new Date("2026-04-01");
+const unlockTime = new Date("2026-04-22T00:00:00+03:00");
 
 const calendar = document.getElementById("calendar");
 const messageBox = document.getElementById("messageBox");
 
+// CREATE DAY BOXES
 messages.forEach((msg, i) => {
-  const dayDate = new Date(startDate);
-  dayDate.setDate(startDate.getDate() + i);
-
   const box = document.createElement("div");
   box.className = "box";
+  box.innerText = i + 1;
   calendar.appendChild(box);
 
-  function updateBox() {
-    const now = new Date();
-    if (now >= dayDate) {
-      box.classList.remove("locked");
-      box.innerText = i + 1;
-      box.onclick = () => {
-        messageBox.innerText = msg;
-      };
-    } else {
-      box.classList.add("locked");
+  box.onclick = () => {
+    if (i === 21 && new Date() < unlockTime) {
+      let diff = unlockTime - new Date();
 
-      let diff = dayDate - now;
       const days = Math.floor(diff / (1000*60*60*24));
       diff -= days * (1000*60*60*24);
+
       const hours = Math.floor(diff / (1000*60*60));
       diff -= hours * (1000*60*60);
+
       const minutes = Math.floor(diff / (1000*60));
 
-      box.innerText = `🔒 ${days}d ${hours}h ${minutes}m`;
+      messageBox.innerText = `🔒 ${days}d ${hours}h ${minutes}m left`;
+      return;
     }
+
+    messageBox.innerText = msg;
+  };
+});
+
+// LOVE TAB
+const loveBox = document.createElement("div");
+loveBox.className = "box";
+loveBox.innerText = "I love you ❤️";
+calendar.appendChild(loveBox);
+
+loveBox.onclick = () => {
+  const now = new Date();
+
+  if (now < unlockTime) {
+    let diff = unlockTime - now;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    diff -= days * (1000*60*60*24);
+
+    const hours = Math.floor(diff / (1000*60*60));
+    diff -= hours * (1000*60*60);
+
+    const minutes = Math.floor(diff / (1000*60));
+
+    messageBox.innerText = `🔒 ${days}d ${hours}h ${minutes}m left`;
+    return;
   }
 
-  updateBox(); // initial update
-  setInterval(updateBox, 60000); // update every minute
-});
+  messageBox.innerText = `
+Happy birthday my love. I remember when we first started talking and told each other our birthdays and now here we are. God bless you, Aaron. I hope nothing but the best happens to you. I hope you reach where you’re meant to be and that the journey there makes you the man you were always meant to be. I’ll be supporting you no matter what happens. If you ever feel stuck, I’m here for you always, I mean it.
+
+❤️❤️❤️
+
+Happy 3 months, my love. I genuinely can’t believe it’s already been 3 months. I love you so much, Aaron. I’ve loved every moment I’ve spent with you, starting from Founders Day. I have a lot to say rn starting from how ur the best bf ever i can gen never explain how much you mean to me everything you do is right and im so grateful that i get to have you ur so understanding and patient like u inspire me im not exaggerating cuz ive always had trouble with those things and being with you helps me a lot more than u think everything about you is perfect and ill love you no matter what. i love our convos i love ur kisses i love ur hugs i love our dates i love ur gifts i love everything ab u. i feel so lucky to have you id be a fool to even look at someone else. thank you for everything uve done for me keep being urself i love you so much aaron i gen hope one day we get to be more than this happy 3 months my love im always here for you
+  `;
+};
+
 </script>
 
 </body>
